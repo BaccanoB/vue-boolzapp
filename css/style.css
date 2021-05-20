@@ -1,0 +1,244 @@
+/* common */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.float{
+    float: left;
+}
+
+/* background */
+#green_background {
+    width: 100%;
+    height: 80px;
+    background-color: #009688;
+}
+
+#grey_background {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-image: linear-gradient(to top,#D3DBDB 30%,#DDDBD1 100%);
+}
+
+/* blocco centrale */
+
+#root {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 680px;
+    background-color: white;
+    margin: 0 auto;
+}
+#root::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+h4 {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+p {
+    font-size: 10px;
+    padding-left: 10px;
+    color: #B1B1B1;
+}
+
+#my_interlocutor,
+#my_avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#my_interlocutor >div,
+.info_profile_container  {
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+/* colonna laterale */
+
+aside{
+    width: 35%;
+    height: 100%;
+    border-right: 2px solid #B1B1B1;
+}
+
+/* aside top */
+
+#user_bar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #EAEAEA;
+}
+
+/* notification bar */
+
+#notification_bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding-left: 20px;
+    background-color: #8EDAFC;
+}
+.fa-bell-slash{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.5;
+    color: #8EDAFC;
+    background-color: white;
+}
+#notification_bar > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 10px;
+}
+#notification_bar h5 {
+    font-size: 12px;
+    font-weight: 100;
+}
+#notification_bar a{
+    font-size: 10px;
+    color: #858383;
+}
+
+/* search bar */
+
+#search_bar {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #FAFAFA;
+    padding: 5px;
+}
+#search_bar input {
+    width: 100%;
+    border: 1px solid #faf5f5;
+    border-radius: 5px;
+    padding: 5px 5px 5px 70px;
+    font-size: 10px;
+    background-color: white;
+}
+#search_bar > i {
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    font-size: 12px;
+    color: #B1B1B1;
+}
+
+#aside_icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-right: 10px;
+}
+#aside_icons i {
+    margin-left: 15px;
+    color: #B1B1B1;
+}
+
+/* aside bottom */
+
+#aside_bottom {
+    height: calc(100% - 150px);
+    overflow-y:scroll;
+}
+
+#aside_bottom div {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding-top: 5px;  
+    padding-left: 10px;
+}
+#aside_bottom >div:first-child {
+    background-color: #E9EBEB;
+}
+
+.info_profile_container {
+    justify-content: flex-start;
+}
+.info_profile_container h4 {
+    font-weight: 200;
+}
+
+.date_hour {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.contact_profile {
+    border-bottom: 1px solid #E9EBEB;
+}
+
+/* sezione messaggi */
+
+#root > div {
+    width: 65%;
+    height: 100%;
+    background-color: royalblue;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #EAEAEA;
+}
+
+#my_interlocutor > div {
+    justify-content: center;
+}
+#my_interlocutor h4 {
+    font-weight: 200;
+}
+
+
+main{
+    width: 100%;
+    height: calc(100% - 100px);
+    background-image: url(../img/mine.jpg);
+    background-size: 50%;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #F3EEEA;
+}
