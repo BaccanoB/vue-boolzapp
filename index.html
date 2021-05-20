@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <title>Boolzapp</title>
     </head>
@@ -44,58 +45,23 @@
                     </div>
                     <!-- /aside top -->
 
-                    <!-- aside bottom -->
-                    <div id="aside_bottom">
-                        <div class="contact_profile">
-                            <div>
-                                <img class="avatar" src="img/avatar_1.jpg" alt="">
+                    <!-- aside contact-->
+                    <div id="aside_contact">
+                        <div class="profile_container">
+                            <div v-for="(contact,index) in contacts"
+                            :class="(index == activeIndex) ? 'active' : ''">
+                                <img class="avatar" :src="getImage(index)" alt="">
                                 <div class="info_profile_container">
-                                <h4>Michele</h4>
+                                <h4>{{ contact.name }}</h4>
                                 <p>Tutto fatto!..</p>
                                 </div>
-                            </div>
-                            <div class="date_hour">
-                                <p>data e ora</p>
-                            </div>
-                        </div>
-                        <div class="contact_profile">
-                            <div >
-                                <img class="avatar" src="img/avatar_2.jpg" alt="">
-                                <div class="info_profile_container">
-                                <h4>Tommaso</h4>
-                                <p>Tutto fatto!..</p>
+                                <div class="date_hour">
+                                    <p>data e ora</p>
                                 </div>
-                            </div>
-                            <div class="date_hour">
-                                <p>data e ora</p>
-                            </div>
-                        </div>
-                        <div class="contact_profile">
-                            <div>
-                                <img class="avatar" src="img/avatar_3.jpg" alt="">
-                                <div class="info_profile_container">
-                                <h4>Valerio</h4>
-                                <p>Tutto fatto!..</p>
-                                </div>
-                            </div>
-                            <div class="date_hour">
-                                <p>data e ora</p>
-                            </div>
-                        </div>
-                        <div class="contact_profile">
-                            <div>
-                                <img class="avatar" src="img/avatar_4.jpg" alt="">
-                                <div class="info_profile_container">
-                                <h4>Fausto</h4>
-                                <p>Tutto fatto!..</p>
-                                </div>
-                            </div>
-                            <div class="date_hour">
-                                <p>data e ora</p>
                             </div>
                         </div>
                     </div>
-                    <!-- /aside bottom -->
+                    <!-- /aside contact -->
                 </aside>
                 <!-- /aside bar -->
 
@@ -170,6 +136,8 @@
                 </div>
                 <!--/ message bar -->
             </section>
-        </div>        
+        </div>  
+        
+        <script src="js/script.js"></script>
     </body>
 </html>
