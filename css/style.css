@@ -179,7 +179,8 @@ aside{
     padding-top: 5px;  
     padding-left: 10px;
 }
-#aside_contact > div:first-child {
+
+.active {
     background-color: #E9EBEB;
 }
 
@@ -196,11 +197,10 @@ aside{
     color: #B1B1B1;
 }
 
-.profile_container {
-    border-bottom: 1px solid #E9EBEB;
-}
 .profile_container > div {
     display: flex;
+    border-bottom: 1px solid #E9EBEB;
+    cursor: pointer;
 }
 
 .info_profile_container {
@@ -247,21 +247,25 @@ main{
 
 #right_column,
 #left_column {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 50%;
     height: 100%;
 }
 
-#right_column > div:first-child {
-    position: absolute;
-    top: 10%;
-    right: 30%;
+#right_column {
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
+#left_column {
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 #left_column > .message {
-    position: absolute;
-    top: 30%;
-    left: 30%;
     background-color: white;
 }
 

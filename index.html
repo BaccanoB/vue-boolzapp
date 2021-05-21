@@ -23,7 +23,7 @@
                         <div id="user_bar">
                             <div id="my_avatar">
                                 <img class="avatar" src="img/avatar_io.jpg" alt="">
-                                <h4>Nome utente</h4>
+                                <h4>Beatrice Baccano</h4>
                             </div>
                             <div class="icons">
                                 <i class="fas fa-circle-notch"></i>
@@ -49,14 +49,15 @@
                     <div id="aside_contact">
                         <div class="profile_container">
                             <div v-for="(contact,index) in contacts"
-                            :class="(index == activeIndex) ? 'active' : ''">
-                                <img class="avatar" :src="getImage(index)" alt="">
+                            :class="(index == activeIndex) ? 'active' : ''"
+                            @click="setActive(index)">
+                                <img class="avatar" :src="getImage(index)" :alt="contact.name">
                                 <div class="info_profile_container">
                                 <h4>{{ contact.name }}</h4>
-                                <p>Tutto fatto!..</p>
+                                <p>{{ getLastMessageKey(index)['text'].substr(0,30)}}...</p>
                                 </div>
                                 <div class="date_hour">
-                                    <p>data e ora</p>
+                                    <p>{{ getLastMessageKey(index).date }}</p>
                                 </div>
                             </div>
                         </div>

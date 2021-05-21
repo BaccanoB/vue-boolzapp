@@ -71,7 +71,7 @@ var app = new Vue(
                 },
                 {
                     name: 'Luisa',
-                    avatar: '_4',
+                    avatar: '_6',
                     visible: true,
                     messages: [
                         {
@@ -94,6 +94,13 @@ var app = new Vue(
                 let imgAvatar = this.contacts[index].avatar;
                 return "img/avatar" + imgAvatar + ".jpg"
                 
+            },
+            getLastMessageKey: function(indexContact){
+                let indexLastMessage = this.contacts[indexContact].messages.length -1;
+                return this.contacts[indexContact].messages[indexLastMessage];
+            },
+            setActive: function(newIndex){
+                this.activeIndex = newIndex;
             }
         }
     }
