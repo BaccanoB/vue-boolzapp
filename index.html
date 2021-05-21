@@ -49,13 +49,13 @@
                     <div id="aside_contact">
                         <div class="profile_container">
                             <div v-for="(contact,index) in contacts"
-                            :class="(index == activeIndex) ? 'active' : ''"
-                            @click="setActive(index)">
+                                :class="(index == activeIndex) ? 'active' : ''" 
+                                @click="setActive(index)">
                                 <img class="avatar" :src="getImage(index)" :alt="contact.name">
                                 <div class="info_profile_container">
                                 <h4>{{ contact.name }}</h4>
                                 <p>{{ getLastMessageKey(index).text.substr(0,30)}}...</p>
-                                </div>
+                            </div>
                                 <div class="date_hour">
                                     <p>{{ getLastMessageKey(index).date }}</p>
                                 </div>
@@ -72,7 +72,8 @@
                     <!-- header -->
                     <header>
                         <div id="active_contact">
-                            <img class="avatar" :src="getImage(activeIndex)" alt="">
+                            <img class="avatar" 
+                                :src="getImage(activeIndex)" alt="">
                             <div>
                                 <h4>{{ contacts[activeIndex].name }}</h4>
                                 <p>{{ getLastMessageKey(activeIndex).date }}</p>
@@ -93,12 +94,12 @@
 
                         </div>
 
-                        <!-- recived message -->
+                        <!-- message area -->
                         <div id="msg_area"> 
-                            <div v-for="contact in contacts[activeIndex].messages "
-                            class="message_container">
+                            <div v-for="contact in contacts[activeIndex].messages " 
+                                class="message_container">
                                 <div :class="contact.status == 'received' ? 'left' : 'right'"
-                                class="message">                     
+                                    class="message">                     
                                     <p class="text">
                                         {{ contact.text }}
                                     </p>
@@ -108,34 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--/ recived message -->
-
-                        <!-- send message -->
-                        <!-- <div id="right_column">
-                            <div>
-                                <div v-for="contact in contacts[activeIndex].messages"
-                                class="message msg_send ">
-                                    <div v-if="contact.status == 'sent'"
-                                    class="message_text">
-                                        <p>{{ contact.text }}</p>
-                                    </div>
-                                    <div v-if="contact.status == 'sent'"
-                                    class="date_hour">
-                                        <p>{{contact.date}}</p>
-                                    </div>
-                                    
-                                </div>
-                                <!-- <div class="message msg_send ">
-                                    <div class="message_text">
-                                        <p>Ricordati di dargli da mangiare!</p>
-                                    </div>
-                                    <div class="date_hour">
-                                        <p>data e ora</p>
-                                    </div>
-                                </div> -->
-                            <!-- </div>
-                        </div> --> 
-                        <!-- /send message -->
+                        <!--/message area -->
                     </main>
                     <!-- /main -->
 
