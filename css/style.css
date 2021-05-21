@@ -123,6 +123,9 @@ aside{
     color: #8EDAFC;
     background-color: white;
 }
+.fa-bell-slash:hover{
+    cursor: s;
+}
 #notification_bar > div {
     height: 100%;
     display: flex;
@@ -138,6 +141,9 @@ aside{
 #notification_bar a{
     font-size: 10px;
     color: #858383;
+}
+#notification_bar a:hover{
+    color: blue;
 }
 
 /* search bar */
@@ -196,6 +202,11 @@ aside{
     margin-left: 15px;
     color: #B1B1B1;
 }
+.icons i:hover{
+    cursor: pointer;
+    color: black;
+}
+
 
 .profile_container > div {
     display: flex;
@@ -237,60 +248,59 @@ header {
 /* main */
 
 main{
-    display: flex;
     width: 100%;
     height: calc(100% - 100px);
+    padding: 20px;
     background-image: url(../img/mine.jpg);
     background-size: 50%;
     overflow-y: scroll;
 }
 
-#right_column,
-#left_column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    margin-top: 20px;
+#msg_area::after{
+    content: "";
+    clear: both;
+    display: table;
 }
 
-#left_column{
-    margin-top: 40px;
+.message_container {
+    width: 100%;
+    height: 50px;
 }
-
-#left_column > .message {
-    background-color: white;
-}
-
 
 .message {
     display: flex;
-    justify-content: space-around;
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
-.message_text {
-    display: flex;
-    align-items: center;
-}
-.message_text p {
-    font-size: 12px;
+.text{
+    align-self: center;
     color: black;
+    font-size: 10px;
 }
 
-.msg_send {
+.data{
+    font-size: 8px;
+}
+
+.right,
+.left {
+    width: 300px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 3px;
+}
+.left {
+    float: left;
+    clear: left;
+    background-color: white;
+}
+.right {
+    float:right;
+    clear: right;
     background-color: #d5f9ba;
 }
-
-main .date_hour {
-    align-items: flex-end;
-}
-
 
 /* footer */
 
@@ -307,6 +317,10 @@ footer i {
     font-size: 20px;
     color: #999898;
 }
+footer i:hover {
+    cursor: pointer;
+    color: black;
+}
 
 footer input {
     width: 80%;
@@ -316,4 +330,11 @@ footer input {
     border-radius: 5px;
     font-size: 10px;
 }
+
+
+
+
+
+
+
 

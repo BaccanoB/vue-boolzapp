@@ -54,7 +54,7 @@
                                 <img class="avatar" :src="getImage(index)" :alt="contact.name">
                                 <div class="info_profile_container">
                                 <h4>{{ contact.name }}</h4>
-                                <p>{{ getLastMessageKey(index)['text'].substr(0,30) }}...</p>
+                                <p>{{ getLastMessageKey(index).text.substr(0,30)}}...</p>
                                 </div>
                                 <div class="date_hour">
                                     <p>{{ getLastMessageKey(index).date }}</p>
@@ -89,32 +89,41 @@
                     <!-- main -->
                     <main>
 
+                        <div id="msg_container">
+
+                        </div>
+
                         <!-- recived message -->
-                        <div id="left_column">
-                            <div v-for="(contact,index) in contacts" 
-                            class="message">
-                                <div class="message_text">
-                                    <p>{{ contact.name }}</p>
-                                </div>
-                                <div class="date_hour">
-                                    <p>data e ora</p>
+                        <div id="msg_area"> 
+                            <div v-for="contact in contacts[activeIndex].messages "
+                            class="message_container">
+                                <div :class="contact.status == 'received' ? 'left' : 'right'"
+                                class="message">                     
+                                    <p class="text">
+                                        {{ contact.text }}
+                                    </p>
+                                    <p class="data">
+                                        {{contact.date}}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <!--/ recived message -->
 
                         <!-- send message -->
-                        <div id="right_column">
+                        <!-- <div id="right_column">
                             <div>
-                                <div v-for="(contact,index) in contacts"
+                                <div v-for="contact in contacts[activeIndex].messages"
                                 class="message msg_send ">
-                                    <div
+                                    <div v-if="contact.status == 'sent'"
                                     class="message_text">
-                                        <p> </p>
+                                        <p>{{ contact.text }}</p>
                                     </div>
-                                    <div class="date_hour">
-                                        <p>data e ora</p>
+                                    <div v-if="contact.status == 'sent'"
+                                    class="date_hour">
+                                        <p>{{contact.date}}</p>
                                     </div>
+                                    
                                 </div>
                                 <!-- <div class="message msg_send ">
                                     <div class="message_text">
@@ -124,8 +133,8 @@
                                         <p>data e ora</p>
                                     </div>
                                 </div> -->
-                            </div>
-                        </div>
+                            <!-- </div>
+                        </div> --> 
                         <!-- /send message -->
                     </main>
                     <!-- /main -->

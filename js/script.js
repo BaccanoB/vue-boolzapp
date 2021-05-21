@@ -101,10 +101,10 @@ var app = new Vue(
             },
             setActive: function(newIndex){
                 this.activeIndex = newIndex;
-            },
-            getAllMessages: function(contactIndex,message){
-                
             }
+            // getLastMessage: function(index) {
+            //     return getLastMessageKey(index).text.substr(0,30);
+            // }
         }
     }
 )
