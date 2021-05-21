@@ -101,6 +101,9 @@ var app = new Vue(
             },
             setActive: function(newIndex){
                 this.activeIndex = newIndex;
+            },
+            getAllMessages: function(contactIndex,message){
+                
             }
         }
     }

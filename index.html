@@ -54,7 +54,7 @@
                                 <img class="avatar" :src="getImage(index)" :alt="contact.name">
                                 <div class="info_profile_container">
                                 <h4>{{ contact.name }}</h4>
-                                <p>{{ getLastMessageKey(index)['text'].substr(0,30)}}...</p>
+                                <p>{{ getLastMessageKey(index)['text'].substr(0,30) }}...</p>
                                 </div>
                                 <div class="date_hour">
                                     <p>{{ getLastMessageKey(index).date }}</p>
@@ -71,11 +71,11 @@
 
                     <!-- header -->
                     <header>
-                        <div id="my_interlocutor">
-                            <img class="avatar" src="img/avatar_1.jpg" alt="">
+                        <div id="active_contact">
+                            <img class="avatar" :src="getImage(activeIndex)" alt="">
                             <div>
-                                <h4>Michele</h4>
-                                <p>Ultimo accesso oggi 0/0/0 alle 0:0:0</p>
+                                <h4>{{ contacts[activeIndex].name }}</h4>
+                                <p>{{ getLastMessageKey(activeIndex).date }}</p>
                             </div>
                         </div>
                         <div class="icons">
@@ -91,9 +91,10 @@
 
                         <!-- recived message -->
                         <div id="left_column">
-                            <div class="message">
+                            <div v-for="(contact,index) in contacts" 
+                            class="message">
                                 <div class="message_text">
-                                    <p>Tutto fatto!</p>
+                                    <p>{{ contact.name }}</p>
                                 </div>
                                 <div class="date_hour">
                                     <p>data e ora</p>
@@ -105,22 +106,24 @@
                         <!-- send message -->
                         <div id="right_column">
                             <div>
-                                <div class="message msg_send ">
-                                    <div class="message_text">
-                                        <p>Hai portato a spasso il cane?</p>
+                                <div v-for="(contact,index) in contacts"
+                                class="message msg_send ">
+                                    <div
+                                    class="message_text">
+                                        <p> </p>
                                     </div>
                                     <div class="date_hour">
                                         <p>data e ora</p>
                                     </div>
                                 </div>
-                                <div class="message msg_send ">
+                                <!-- <div class="message msg_send ">
                                     <div class="message_text">
                                         <p>Ricordati di dargli da mangiare!</p>
                                     </div>
                                     <div class="date_hour">
                                         <p>data e ora</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- /send message -->

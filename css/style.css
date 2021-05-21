@@ -31,7 +31,7 @@ p {
     color: #B1B1B1;
 }
 
-#my_interlocutor,
+#active_contact,
 #my_avatar {
     display: flex;
     justify-content: flex-start;
@@ -41,7 +41,7 @@ p {
     padding-left: 10px;
 }
 
-#my_interlocutor >div {
+#active_contact >div {
 height: 100%;
 display: flex;
 flex-direction: column;
@@ -227,10 +227,10 @@ header {
     background-color: #EAEAEA;
 }
 
-#my_interlocutor > div {
+#active_contact > div {
     justify-content: center;
 }
-#my_interlocutor h4 {
+#active_contact h4 {
     font-weight: 200;
 }
 
@@ -249,21 +249,15 @@ main{
 #left_column {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50%;
     height: 100%;
-}
-
-#right_column {
     margin-top: 20px;
-    justify-content: space-between;
 }
 
-#left_column {
-    align-items: center;
-    justify-content: center;
+#left_column{
+    margin-top: 40px;
 }
-
-
 
 #left_column > .message {
     background-color: white;
@@ -277,6 +271,7 @@ main{
     height: 40px;
     border-radius: 5px;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .message_text {
@@ -289,7 +284,6 @@ main{
 }
 
 .msg_send {
-    margin-bottom: 10px;
     background-color: #d5f9ba;
 }
 
