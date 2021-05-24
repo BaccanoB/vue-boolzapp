@@ -101,10 +101,30 @@ var app = new Vue(
             },
             setActive: function(newIndex){
                 this.activeIndex = newIndex;
-            }
+            },
             // getLastMessage: function(index) {
             //     return getLastMessageKey(index).text.substr(0,30);
             // }
+            addItem: function(event) {
+                const obj = {
+                    date: '10/01/2020 15:50:00',
+                    text: event.target.value,
+                    status:'sent'
+                };
+                this.contacts[this.activeIndex].messages.push(obj);
+                event.target.value = "";
+
+                setTimeout(() => { 
+                    const response = {
+                        date: '10/01/2020 15:51:00',
+                        text: 'Ok',
+                        status:'received'
+                    };
+                    this.contacts[this.activeIndex].messages.push(response);
+                }, 1000);
+            },
         }
     }
-)
+);
+
+   
