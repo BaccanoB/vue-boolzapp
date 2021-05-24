@@ -89,7 +89,7 @@ var app = new Vue(
             ],
             activeIndex: 0
         },
-        methods:{
+        methods: {
             getImage: function(index){
                 let imgAvatar = this.contacts[index].avatar;
                 return "img/avatar" + imgAvatar + ".jpg"
@@ -123,6 +123,18 @@ var app = new Vue(
                     this.contacts[this.activeIndex].messages.push(response);
                 }, 1000);
             },
+            searchContact: function(event){
+                for(var i = 0;i< this.contacts.length; i++){
+                    let isInclude = this.contacts[i].name.startsWith(event.target.value);
+                    if( isInclude == true){
+                        this.contacts[i].visible = true
+                    } else{
+                        this.contacts[i].visible = false
+                    }
+
+                    console.log(this.contacts[i].visible);
+                }
+            }
         }
     }
 );
