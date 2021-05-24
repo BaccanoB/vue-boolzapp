@@ -40,8 +40,9 @@
                         </div>
                         <div id="search_bar">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat"
-                            @keydown.enter="searchContact">
+                            <input 
+                              type="text" placeholder="Cerca o inizia una nuova chat"
+                              @keyup.enter="searchContact">
                         </div>
                     </div>
                     <!-- /aside top -->
@@ -50,6 +51,7 @@
                     <div id="aside_contact">
                         <div class="profile_container">
                             <div v-for="(contact,index) in contacts"
+                                v-show="contact.visible == true"
                                 :class="(index == activeIndex) ? 'active' : ''" 
                                 @click="setActive(index)">
                                 <img class="avatar" :src="getImage(index)" :alt="contact.name">

@@ -131,7 +131,6 @@ var app = new Vue(
                     } else{
                         this.contacts[i].visible = false
                     }
-
                     console.log(this.contacts[i].visible);
                 }
             }
