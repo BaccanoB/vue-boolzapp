@@ -15,10 +15,9 @@
     <body>
         <div id="green_background"></div>
         <div id="grey_background">
-            <section id="root">
+            <section id="root" class="clearfix">
                 <!-- aside bar -->
                 <aside class="float">
-
                     <!-- aside top -->
                     <div id="aside_top">
                         <div id="user_bar">
@@ -93,8 +92,8 @@
                     <!-- main -->
                     <main>
                         <!-- message area -->
-                        <div id="msg_area"> 
-                            <div v-for="contact in contacts[activeIndex].messages " 
+                        <div id="msg_area" class="clearfix"> 
+                            <div v-for="(contact,index) in contacts[activeIndex].messages " 
                                 class="message_container">
                                 <div :class="contact.status == 'received' ? 'left' : 'right'"
                                     class="message">                     
@@ -104,6 +103,10 @@
                                     <p class="data">
                                         {{contact.date}}
                                     </p>
+                                    <div class="dropdown">
+                                        <a href="#">message info</a>
+                                        <a href="#"> delete message</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +126,7 @@
                 <!--/ message bar -->
             </section>
         </div>  
-        
+        <!-- javascript -->
         <script src="js/script.js"></script>
     </body>
 </html>

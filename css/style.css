@@ -1,5 +1,5 @@
 /* common */
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,8 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
-.float{
+.float {
     float: left;
 }
 
@@ -41,11 +40,10 @@ p {
     padding-left: 10px;
 }
 
-#active_contact >div {
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /* background */
@@ -74,16 +72,15 @@ align-items: flex-start;
     background-color: white;
     margin: 0 auto;
 }
-#root::after {
-    content: "";
-    clear: both;
-    display: table;
-}
 
+#root > div {
+    width: 65%;
+    height: 100%;
+}
 
 /* colonna laterale */
 
-aside{
+aside {
     width: 35%;
     height: 100%;
     border-right: 2px solid #B1B1B1;
@@ -108,7 +105,7 @@ aside{
     padding-left: 20px;
     background-color: #8EDAFC;
 }
-.fa-bell-slash{
+.fa-bell-slash {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -117,7 +114,7 @@ aside{
     color: #8EDAFC;
     background-color: white;
 }
-.fa-bell-slash:hover{
+.fa-bell-slash:hover {
     cursor: pointer;
     color: white;
     background-color: #d5f9ba;
@@ -134,11 +131,11 @@ aside{
     font-size: 12px;
     font-weight: 100;
 }
-#notification_bar a{
+#notification_bar a {
     font-size: 10px;
     color: #858383;
 }
-#notification_bar a:hover{
+#notification_bar a:hover {
     color: blue;
 }
 
@@ -166,7 +163,6 @@ aside{
     font-size: 12px;
     color: #B1B1B1;
 }
-
 
 /* aside contact */
 
@@ -197,11 +193,10 @@ aside{
     margin-left: 15px;
     color: #B1B1B1;
 }
-.icons i:hover{
+.icons i:hover {
     cursor: pointer;
     color: black;
 }
-
 
 .profile_container > div {
     display: flex;
@@ -225,14 +220,6 @@ aside{
     padding-top: 5px;
 }
 
-/* sezione messaggi */
-
-#root > div {
-    width: 65%;
-    height: 100%;
-    background-color: royalblue;
-}
-
 /* header */
 
 header {
@@ -244,6 +231,10 @@ header {
 
 #active_contact > div {
     justify-content: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;      
 }
 #active_contact h4 {
     font-weight: 200;
@@ -251,7 +242,7 @@ header {
 
 /* main */
 
-main{
+main {
     width: 100%;
     height: calc(100% - 100px);
     padding: 20px;
@@ -260,13 +251,8 @@ main{
     overflow-y: scroll;
 }
 
-#msg_area::after{
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .message_container {
+    position: relative;
     width: 100%;
     height: 50px;
 }
@@ -304,6 +290,25 @@ main{
     float:right;
     clear: right;
     background-color: #d5f9ba;
+}
+
+/* dropdown */
+
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 /* footer */

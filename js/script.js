@@ -87,7 +87,8 @@ var app = new Vue(
                     ],
                 },
             ],
-            activeIndex: 0
+            activeIndex: 0,
+            messageItem: false,
         },
         methods: {
             getImage: function(index){
@@ -102,9 +103,6 @@ var app = new Vue(
             setActive: function(newIndex){
                 this.activeIndex = newIndex;
             },
-            // getLastMessage: function(index) {
-            //     return getLastMessageKey(index).text.substr(0,30);
-            // }
             addItem: function(event) {
                 const obj = {
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -132,6 +130,7 @@ var app = new Vue(
                         this.contacts[i].visible = false
                     }
                 }
+
             }
         }
     }
