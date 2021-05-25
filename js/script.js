@@ -107,7 +107,7 @@ var app = new Vue(
             // }
             addItem: function(event) {
                 const obj = {
-                    date: '10/01/2020 15:50:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: event.target.value,
                     status:'sent'
                 };
@@ -116,7 +116,7 @@ var app = new Vue(
 
                 setTimeout(() => { 
                     const response = {
-                        date: '10/01/2020 15:51:00',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: 'Ok',
                         status:'received'
                     };
@@ -125,13 +125,12 @@ var app = new Vue(
             },
             searchContact: function(event){
                 for(var i = 0;i< this.contacts.length; i++){
-                    let isInclude = this.contacts[i].name.startsWith(event.target.value);
+                    let isInclude = this.contacts[i].name.toLowerCase().startsWith(event.target.value.toLowerCase());
                     if( isInclude == true){
                         this.contacts[i].visible = true
                     } else{
                         this.contacts[i].visible = false
                     }
-                    console.log(this.contacts[i].visible);
                 }
             }
         }

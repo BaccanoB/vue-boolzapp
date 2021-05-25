@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="css/style.css">
         <title>Boolzapp</title>
     </head>
@@ -40,9 +41,8 @@
                         </div>
                         <div id="search_bar">
                             <i class="fas fa-search"></i>
-                            <input 
-                              type="text" placeholder="Cerca o inizia una nuova chat"
-                              @keyup.enter="searchContact">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat"
+                                @keyup.enter="searchContact">
                         </div>
                     </div>
                     <!-- /aside top -->
@@ -79,7 +79,7 @@
                                 :src="getImage(activeIndex)" alt="">
                             <div>
                                 <h4>{{ contacts[activeIndex].name }}</h4>
-                                <p>{{ getLastMessageKey(activeIndex).date }}</p>
+                                <p>Ultimo messaggio inviato il: {{ getLastMessageKey(activeIndex).date }}</p>
                             </div>
                         </div>
                         <div class="icons">

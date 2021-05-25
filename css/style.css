@@ -48,14 +48,6 @@ flex-direction: column;
 align-items: flex-start;
 }
 
-.not_visible {
-    visibility:hidden;
-}
-
-.visible {
-    visibility: visible;
-}
-
 /* background */
 #green_background {
     width: 100%;
